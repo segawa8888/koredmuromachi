@@ -1,0 +1,4 @@
+@forward 'function';
+@forward 'setting';
+// 新しくscssファイル作成したら都度追記していく
+// footer.scssなどでいちいちfunctionやsetting.scssを読み込むのは面倒なので一度なにか別のファイルにまとめてそれをfooter.scss冒頭でひとつだけ読み込む

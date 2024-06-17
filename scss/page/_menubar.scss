@@ -1,0 +1,205 @@
+@use "../global" as *;
+
+//top menubar
+
+
+.menubar {
+    position: absolute;
+    width: 100%;
+    z-index:99;
+    padding-top: rem(12);
+    color: #fff;
+}
+
+  /* スクロールしたらヘッダーメニューのフォントカラー変更 */
+  .menubar.menubarColorScroll {
+    color: #000;
+  }
+  .menubarColorScroll .menubar-top {
+    border-bottom: rem(1) solid #000;
+  }
+
+.menubar-inner {
+    display: flex;
+    padding-left: rem(15);
+    @include mq(md) {
+        max-width:rem(1024);
+        margin:0 auto;
+    }
+}
+
+.menubar-logo {
+    width: rem(45.72);
+    margin-right: rem(8.8);
+    @include mq(md) {
+        width:rem(64.52);
+        margin-right: rem(12.2);
+    }
+}
+
+.menubarLogoScroll .menubar-logo .-before {
+    display : none;
+  }
+  .menubar-logo .-after {
+    display : none;
+  }
+  .menubarLogoScroll .menubar-logo .-after {
+    display : block;
+  }
+  .menubarLogoScroll .menubar-top__logo .-before {
+    display : none;
+  }
+  .menubar-top__logo .-after {
+    display : none;
+  }
+  .menubarLogoScroll .menubar-top__logo .-after {
+    display : block;
+  }
+
+.menubar-area {
+    width: 100%;
+}
+
+.menubar-top {
+    border-bottom: rem(1) solid #fff;
+    padding-bottom: rem(6);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-right: rem(25);
+    padding-left: rem(3);
+    @include mq(md) {
+        padding-bottom: rem(2.5);
+    }
+}
+
+.menubar-top__logo {
+    width: rem(134);
+    @include mq(md) {
+        width:rem(191.2);
+    }
+}
+
+.menubar-top__cal {
+    font-size: rem(12);
+    line-height: calc(15 / 12);
+    font-family: $en;
+    @include mq(md) {
+        font-size: rem(14);
+        line-height: calc(17 / 14);
+    }
+}
+.menubar-top__cal
+.month,.day {
+    font-size:rem(24);
+    line-height: calc(29 / 24);
+    font-weight: $bold;
+    @include mq(md) {
+        font-size: rem(28);
+        line-height: calc(34 / 28);
+    }
+}
+
+.menubar-lists {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-top: rem(7);
+    padding-right: rem(25);
+    padding-left: rem(3);
+}
+
+.menubar-list {
+    font-size: rem(14);
+    line-height: calc(17 / 14);
+    font-weight: $bold;
+    font-family: $en;
+    @include mq(md) {
+        font-size: rem(16);
+        line-height: calc(19 / 16);
+    }
+}
+
+.menubar-list:nth-child(n+2) {
+    margin-left: rem(31);
+    @include mq(md) {
+        margin-left: rem(66);
+    }
+}
+
+.menubar-bottom {
+    border-bottom: rem(1) solid #fff;
+    padding-bottom: rem(4);
+}
+
+//page menubar
+
+.page-menubar {
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index:99;
+}
+
+.page-menubar-inner {
+    padding:rem(12) rem(25) rem(5) rem(15);
+    display: flex;
+    align-items: flex-end;
+    @include mq(md) {
+        max-width: rem(1024);
+        margin-left: auto;
+        margin-right: auto;
+        align-items: initial;
+        justify-content: space-between;
+        padding:rem(13) rem(20) rem(12.5) rem(20);
+    }
+}
+
+.page-menubar-logo {
+    width:rem(45.63);
+    @include mq(md) {
+        width:rem(267.92);
+    }
+}
+
+.page-menubar-lists {
+    display: flex;
+    align-items: center;
+    margin-left: rem(12.4);
+    @include mq(md) {
+        margin-left: rem(84.1);
+        padding-top: rem(12);
+    }
+}
+
+.page-menubar-list:nth-child(n+2) {
+    margin-left: rem(31);
+    @include mq(md) {
+        margin-left: rem(66);
+    }
+}
+
+.page-menubar-list a {
+    font-size: rem(14);
+    line-height: calc(17 / 14);
+    font-weight: $bold;
+    font-family: $en;
+    @include mq(md) {
+        font-size: rem(16);
+        line-height: calc(19 / 16);
+    }
+}
+
+.page-cal {
+    display: none;
+    @include mq(md) {
+        display: block;
+    }
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+}

@@ -1,0 +1,43 @@
+@use "../global" as *;
+
+//category tag
+
+.category-tag a {
+    min-width:rem(41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(11);
+    line-height: calc(11 / 11);
+    letter-spacing: 0.064em;
+    font-weight: $bold;
+    padding:rem(6) 0 rem(4) 0;
+}
+
+.category-tag a:hover {
+    text-decoration: none;
+}
+
+.cat-red {
+    color:#E6003E;
+    border:1px solid #E6003E;
+    a:hover {
+        color:#E6003E;
+    }
+}
+
+.cat-blue {
+    color:#0092E5;
+    border:1px solid #0092E5;
+    a:hover {
+        color:#0092E5; 
+    }
+}
+
+.category-date {
+    font-size: rem(12);
+    line-height: calc(12 / 12);
+    color: $gray;
+    font-family: $accent;
+    margin-top: initial;
+}

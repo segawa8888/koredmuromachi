@@ -1,0 +1,23 @@
+@use "../global" as *;
+
+html {
+    // function.scssからフォントの指定
+    //375px以下から画面幅が変わったらフォントも自動で大きさが変わる指定
+  @media (max-width: 375px) {
+    font-size: vw(375, 16);
+  }
+
+  // 375px~787px
+  font-size: 16px;
+}
+
+// ホバー
+a {
+  @include mq("md") {
+    transition: .3s;
+    &:hover {
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
+}

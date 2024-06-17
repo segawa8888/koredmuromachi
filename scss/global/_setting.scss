@@ -1,0 +1,42 @@
+//変数やmixinを指定しているファイル
+
+@use 'sass:math';
+
+$base:'Noto Sans Myanmar', sans-serif;
+$en:'Lato', sans-serif;
+$accent: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+
+$gray:#6E6E6E;
+
+.outer__body {
+  font-family: $base;
+}
+
+// font-weight
+$regular: 400;
+$bold: 700;
+
+//ブレイクポイント
+$breakpoints: (
+  sm: 600, //small
+  md: 991, //medium
+  lg: 1024, //large
+  xl: 1440, //x-large
+);
+
+// メディアクエリ
+//　このような書き方の変数をmapと呼ぶ
+$mediaquerys: (
+  sm: "screen and (min-width: #{map-get($breakpoints,'sm')}px)",
+  md: "screen and (min-width: #{map-get($breakpoints,'md')}px)",
+  lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
+  xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",
+);
+
+// メディアクエリを "@include mq(){}" でcssファイルにコンパイルされる。mq()の中身はcss側で変更可能 →sm,mdなど
+// 上の$mediaquerysから、$mediaquery:mdで768px以下の指定を呼び出している
+@mixin mq($mediaquery: md) {
+  @media #{map-get($mediaquerys, $mediaquery)} {
+    @content;
+  }
+}

@@ -1,0 +1,16 @@
+@use "../global" as *;
+
+//PCのみ(768px以上)表示
+.u-desktop {
+  display: none;
+  @include mq('md') {
+    display: block;
+  }
+}
+
+.u-desktop-flex {
+  display: none;
+    @include mq(md) {
+        display: flex;
+    }
+}
